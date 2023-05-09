@@ -1,0 +1,12 @@
+{
+  "model_name" : "cnn",
+  "no_models" : 10,
+  "type" : "mnist",
+  "global_epochs" : 200,
+  "local_epochs" : 1,
+  "k" : 10,
+  "batch_size" : 32,
+  "lr" : 0.001,
+  "momentum" : 0.0001,
+  "lambda" : 0.1
+}
