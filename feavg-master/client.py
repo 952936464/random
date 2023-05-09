@@ -68,32 +68,25 @@ class Client(object):
         print("Client %d local train done" % self.client_id)
 
         # 客户端返回差值
-        if (self.client_id == 100 or self.client_id == 2 or self.client_id == 3 or self.client_id == 400):
+        if (self.client_id == 100 or self.client_id != 2 or self.client_id == 3 or self.client_id == 400):
             for i in range(len(diff['conv1.weight'])):
                 for j in range(len(diff['conv1.weight'][0])):
                     for k in range(len(diff['conv1.weight'][0][0])):
                         diff['conv1.weight'][i][j][k] = random.random()
-            '''for i in range(len(diff['conv1.bias'])):
-                for j in range(len(diff['conv1.bias'][0])):
-                    for k in range(len(diff['conv1.bias'][0][0])):
-                        diff['conv1.bias'][i][j][k] = random.random()'''
+            for i in range(len(diff['conv1.bias'])):
+                diff['conv1.bias'][i] = random.random()
             for i in range(len(diff['conv2.weight'])):
                 for j in range(len(diff['conv2.weight'][0])):
                     for k in range(len(diff['conv2.weight'][0][0])):
                         diff['conv2.weight'][i][j][k] = random.random()
-            '''for i in range(len(diff['conv2.bias'])):
-                for j in range(len(diff['conv2.bias'])):
-                    for k in range(len(diff['conv2.bias'][0][0])):
-                        diff['conv2.bias'][i][j][k] = random.random()
-            for i in range(len(diff['fc.weight'])):
-                for j in range(len(diff['fc.weight'])):
+            for i in range(len(diff['conv2.bias'])):
+                diff['conv2.bias'][i] = random.random()
+            '''for i in range(len(diff['fc.weight'])):
                     for k in range(len(diff['fc.weight'][0][0])):
-                        diff['fc.weight'][i][j][k] = random.random()
+                        diff['fc.weight'][i][k] = random.random()'''
             for i in range(len(diff['fc.bias'])):
-                for j in range(len(diff['fc.bias'])):
-                    for k in range(len(diff['fc.bias'][0][0])):
-                        diff['fc.bias'][i][j][k] = random.random()'''
-            #pdb.set_trace()
+                diff['fc.bias'][i] = random.random()
+            pdb.set_trace()
             # 客户端返回差值
         return diff
 
