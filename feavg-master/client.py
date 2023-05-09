@@ -73,15 +73,15 @@ class Client(object):
                 for j in range(len(diff['conv1.weight'][0])):
                     for k in range(len(diff['conv1.weight'][0][0])):
                         diff['conv1.weight'][i][j][k] = random.random()
-            for i in range(len(diff['conv1.bias'])):
+            '''for i in range(len(diff['conv1.bias'])):
                 for j in range(len(diff['conv1.bias'][0])):
                     for k in range(len(diff['conv1.bias'][0][0])):
-                        diff['conv1.bias'][i][j][k] = random.random()
+                        diff['conv1.bias'][i][j][k] = random.random()'''
             for i in range(len(diff['conv2.weight'])):
                 for j in range(len(diff['conv2.weight'][0])):
                     for k in range(len(diff['conv2.weight'][0][0])):
                         diff['conv2.weight'][i][j][k] = random.random()
-            for i in range(len(diff['conv2.bias'])):
+            '''for i in range(len(diff['conv2.bias'])):
                 for j in range(len(diff['conv2.bias'])):
                     for k in range(len(diff['conv2.bias'][0][0])):
                         diff['conv2.bias'][i][j][k] = random.random()
@@ -92,8 +92,8 @@ class Client(object):
             for i in range(len(diff['fc.bias'])):
                 for j in range(len(diff['fc.bias'])):
                     for k in range(len(diff['fc.bias'][0][0])):
-                        diff['fc.bias'][i][j][k] = random.random()
-            pdb.set_trace()
+                        diff['fc.bias'][i][j][k] = random.random()'''
+            #pdb.set_trace()
             # 客户端返回差值
         return diff
 
